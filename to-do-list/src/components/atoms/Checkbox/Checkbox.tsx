@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./Checkbox.module.css";
 import { CheckboxProps } from "./Checkbox.types";
-import { classNames } from "../../../shared/utils/styles-utils/style-class.utils";
+import { getClassNames } from "../../../shared/utils/styles-utils/style-class.utils";
 
 export function Checkbox({ checked = false, onChange, label }: CheckboxProps) {
   const [isChecked, setIsChecked] = useState(checked);
@@ -22,7 +22,7 @@ export function Checkbox({ checked = false, onChange, label }: CheckboxProps) {
       <span className={styles.customCheckbox} />
       {label && (
         <span
-          className={classNames(
+          className={getClassNames(
             styles.checkboxLabel,
             isChecked && styles.checkboxLabelChecked
           )}>

@@ -1,3 +1,4 @@
+import { getClassNames } from "../../../shared/utils/styles-utils/style-class.utils";
 import styles from "./Input.module.css";
 import { InputProps } from "./Input.types";
 
@@ -9,9 +10,6 @@ export function Input({
   type = "text",
   ...rest
 }: InputProps) {
-  const classNames = (...classes: (string | false | undefined)[]) =>
-    classes.filter(Boolean).join(" ");
-
   const hasValue = !!value;
 
   if (!onChange) {
@@ -26,7 +24,10 @@ export function Input({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className={classNames(styles.inputBase, hasValue && styles.inputFilled)}
+        className={getClassNames(
+          styles.inputBase,
+          hasValue && styles.inputFilled
+        )}
         {...rest}
       />
     </label>
