@@ -1,0 +1,17 @@
+.taskButtonContainer {
+  display: flex;
+  background-color: var(--gray-400);
+  border-radius: 12px;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  justify-content: space-between;
+  height: 4.5rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.taskButtonContainer .checkboxLabel {
+  margin-right: 10px;
+}
