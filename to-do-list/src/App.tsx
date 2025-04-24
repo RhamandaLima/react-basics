@@ -1,7 +1,7 @@
 export function App() {
   return (
     <>
-      <div></div>
+      <div>Bem-vindo ao TODO List</div>
     </>
   );
 }
