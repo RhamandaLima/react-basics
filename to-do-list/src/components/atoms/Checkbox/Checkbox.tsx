@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./Checkbox.module.css";
 import { CheckboxProps } from "./Checkbox.types";
+import { classNames } from "../../../shared/utils/styles-utils/style-class.utils";
 
 export function Checkbox({ checked = false, onChange, label }: CheckboxProps) {
   const [isChecked, setIsChecked] = useState(checked);
@@ -9,10 +10,6 @@ export function Checkbox({ checked = false, onChange, label }: CheckboxProps) {
     const newChecked = !isChecked;
     setIsChecked(newChecked);
     onChange?.(newChecked);
-  };
-
-  const classNames = (...classes: (string | false | undefined)[]): string => {
-    return classes.filter(Boolean).join(" ");
   };
 
   return (
