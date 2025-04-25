@@ -1,4 +1,3 @@
-import { TaskInfo } from '../../molecules/Task/Task.types.ts';
 import { Task } from '../../molecules/Task/Task.tsx';
 import { TaskBoardProps } from './TaskBoard.types.ts';
 
@@ -13,6 +12,7 @@ import { EmptyBoard } from '../../atoms/EmptyBoard/EmptyBoard.tsx';
 import { EmptyBoardProps } from '../../atoms/EmptyBoard/EmptyBoard.types.ts';
 
 import emptyFile from '../../../assets/icons/empty-file.svg';
+import { TaskInfo } from '../../../shared/interfaces/task.interface.ts';
 
 export function TaskBoard({
   taskList,

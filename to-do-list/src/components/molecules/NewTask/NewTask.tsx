@@ -4,8 +4,8 @@ import { ButtonType } from '../../atoms/Button/Button.types';
 import { Input } from '../../atoms/Input/Input';
 
 import styles from './NewTask.module.css';
-import { TaskInfo } from '../Task/Task.types';
-import { NewTaskProps } from './newTask.types';
+import { NewTaskProps } from './NewTask.types';
+import { TaskInfo } from '../../../shared/interfaces/task.interface';
 
 export function NewTask({ onCreate }: NewTaskProps) {
   const [taskLabel, setTaskLabel] = useState('');

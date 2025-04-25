@@ -1,9 +1,3 @@
-export interface TaskInfo {
-  id: string;
-  label: string;
-  checked: boolean;
-}
-
 export interface TaskProps {
   taskId: string;
   label: string;
