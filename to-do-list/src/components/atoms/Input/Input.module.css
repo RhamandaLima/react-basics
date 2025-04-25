@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 0.25rem;
   font-family: sans-serif;
+  width: 100%;
 }
 
 .inputLabel {

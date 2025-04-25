@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { TaskInfo } from '../../molecules/Task/Task.types.ts';
 import { Task } from '../../molecules/Task/Task.tsx';
 import { TaskBoardProps } from './TaskBoard.types.ts';
@@ -16,13 +14,15 @@ import { EmptyBoardProps } from '../../atoms/EmptyBoard/EmptyBoard.types.ts';
 
 import emptyFile from '../../../assets/icons/empty-file.svg';
 
-export function TaskBoard({ taskList = [] }: TaskBoardProps) {
-  const [tasks, setTasks] = useState<TaskInfo[]>(taskList);
-
-  const totalTasks = tasks?.length;
-  const getTasksSelected = (tasks: TaskInfo[]): number => {
-    return tasks?.filter((task: TaskInfo) => task.checked).length;
-  };
+export function TaskBoard({
+  taskList,
+  onCheckboxChange,
+  onTaskDelete
+}: TaskBoardProps) {
+  const totalTasks = taskList?.length;
+  const selectedCount = taskList?.filter(
+    (task: TaskInfo) => task.checked
+  ).length;
 
   const counterTotal: CounterProps = {
     description: 'Tarefas criadas',
@@ -33,27 +33,13 @@ export function TaskBoard({ taskList = [] }: TaskBoardProps) {
     description: 'Concluídas',
     descriptionColor: CounterColor.PURPLE,
     total: totalTasks,
-    selected: getTasksSelected(tasks)
+    selected: selectedCount
   };
 
   const emptyBoardProps: EmptyBoardProps = {
     description: 'Você ainda não tem tarefas cadastradas',
     icon: emptyFile,
     subdescription: 'Crie tarefas e organize seus itens a fazer'
-  };
-
-  const handleCheckboxChange = (taskId: string, checked: boolean): void => {
-    setTasks((prevTasks: TaskInfo[]) =>
-      prevTasks.map((task: TaskInfo) =>
-        task.id === taskId ? { ...task, checked } : task
-      )
-    );
-  };
-
-  const handleTaskDelete = (taskId: string): void => {
-    setTasks((prevTasks: TaskInfo[]) =>
-      prevTasks.filter((task: TaskInfo) => task.id !== taskId)
-    );
   };
 
   return (
@@ -65,21 +51,21 @@ export function TaskBoard({ taskList = [] }: TaskBoardProps) {
         />
       </div>
 
-      {tasks.length === 0 && (
+      {taskList.length === 0 && (
         <>
           <div className={styles.divider}></div>
           <EmptyBoard {...emptyBoardProps}></EmptyBoard>
         </>
       )}
 
-      {tasks.map((task: TaskInfo) => (
+      {taskList.map((task: TaskInfo) => (
         <Task
           key={task.id}
           taskId={task.id}
           label={task.label}
           checked={task.checked}
-          onCheckboxChange={handleCheckboxChange}
-          onTaskDelete={handleTaskDelete}
+          onCheckboxChange={onCheckboxChange}
+          onTaskDelete={onTaskDelete}
         />
       ))}
     </>
