@@ -1,54 +1,64 @@
-# React + TypeScript + Vite
+#  To-Do List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this challenge, a task management application in the style of a **to-do list** was developed. The application allows the user to manage their daily tasks with the following functionalities:
 
-Currently, two official plugins are available:
+- **Add a new task**: The user can insert new tasks into the list.
+- **Mark and unmark a task as completed**: The user can mark a task as completed or undo it.
+- **Remove a task from the list**: The user can delete a task from the list.
+- **Show task completion progress**: Display progress based on tasks marked as completed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Concepts used
 
-## Expanding the ESLint configuration
+During the development of this challenge, the following concepts were applied:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **States**: Using `useState` to manage the state of the task list and progress.
+- **Immutability of state**: The state is treated as immutable when updating the task list.
+- **Lists and keys in ReactJS**: Each task is rendered in a list with a unique key to ensure efficient rendering.
+- **Props**: Components are created in a reusable way using props.
+- **Componentization**: The application was broken down into small components for better organization and reusability.
+- **Responsiveness**: The interface was built to ensure a good experience on different screen sizes.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### How to run the project
+
+1. Clone this repository;
+   
+2. Navigate to the project directory:
+   
+```bash
+cd to-do-list
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. Install the project dependencies using npm:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+4. Run the development server:
+
+```bash
+npm run dev
+```
+
+5. Open your browser and go to http://localhost:5173 to see the application running.
+
+### Screenshots of the application
+Here, you can see screenshots of the application running, as well as a comparison with the prototype.
+
+#### Example of the application running:
+
+![image](https://github.com/user-attachments/assets/f3815b8a-908e-4c66-bbf7-2b3df608cd3e)
+
+![image](https://github.com/user-attachments/assets/059b5f07-4eef-42c7-9e1d-5efe8b33e60f)
+
+#### Comparison with the prototype:
+
+![image](https://github.com/user-attachments/assets/e5d0f806-3350-44cf-b861-4e2610a4d4a0)
+![image](https://github.com/user-attachments/assets/f86e11ea-aa99-425d-96a1-bb7d465b2ec7)
+
+### Technologies used
+
+- **React** (Version: 19.0.0)
+- **TypeScript** (Version: 5.7.2)
+- **Vite** (Version: 6.3.1)
+- **CSS**
