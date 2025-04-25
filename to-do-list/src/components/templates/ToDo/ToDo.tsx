@@ -21,7 +21,9 @@ export function ToDo() {
   }
 
   function handleDeleteTask(taskId: string): void {
-    setTasks((prev) => prev.filter((task) => task.id !== taskId));
+    setTasks((prev: TaskInfo[]) =>
+      prev.filter((task: TaskInfo) => task.id !== taskId)
+    );
   }
 
   return (

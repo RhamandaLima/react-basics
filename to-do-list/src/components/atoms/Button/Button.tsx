@@ -1,17 +1,17 @@
-import { ButtonProps, ButtonType } from "./Button.types";
+import { ButtonProps, ButtonType } from './Button.types';
 
-import trashIcon from "../../../assets/icons/delete.svg";
-import plusIcon from "../../../assets/icons/plus.svg";
+import trashIcon from '../../../assets/icons/delete.svg';
+import plusIcon from '../../../assets/icons/plus.svg';
 
-import styles from "./Button.module.css";
+import styles from './Button.module.css';
 
 export function Button({
   buttonType = ButtonType.CREATE,
   onClick,
   label,
-  ...rest
+  ...props
 }: ButtonProps) {
-  const getButtonClassName = () => {
+  const getButtonClassName = (): string => {
     switch (buttonType) {
       case ButtonType.DELETE:
         return `${styles.buttonBase} ${styles.deleteButton}`;
@@ -23,25 +23,14 @@ export function Button({
   };
 
   return (
-    <button
-      className={getButtonClassName()}
-      onClick={onClick}
-      {...rest}>
+    <button className={getButtonClassName()} onClick={onClick} {...props}>
       {buttonType === ButtonType.DELETE && (
-        <img
-          src={trashIcon}
-          alt="Excluir"
-          className={styles.deleteIcon}
-        />
+        <img src={trashIcon} alt="Excluir" className={styles.deleteIcon} />
       )}
       {buttonType === ButtonType.CREATE && (
         <>
           {label && <span>{label}</span>}
-          <img
-            src={plusIcon}
-            alt="Criar"
-            className={styles.icon}
-          />
+          <img src={plusIcon} alt="Criar" className={styles.icon} />
         </>
       )}
     </button>

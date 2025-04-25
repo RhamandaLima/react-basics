@@ -1,19 +1,19 @@
-import { getClassNames } from "../../../shared/utils/styles-utils/style-class.utils";
-import styles from "./Input.module.css";
-import { InputProps } from "./Input.types";
+import { getClassNames } from '../../../shared/utils/styles-utils/style-class.utils';
+import styles from './Input.module.css';
+import { InputProps } from './Input.types';
 
 export function Input({
-  value = "",
+  value = '',
   onChange,
   label,
-  placeholder = "",
-  type = "text",
-  ...rest
+  placeholder = '',
+  type = 'text',
+  ...props
 }: InputProps) {
   const hasValue = !!value;
 
   if (!onChange) {
-    throw new Error("Input must have an onChange handler.");
+    throw new Error('Input must have an onChange handler.');
   }
 
   return (
@@ -28,7 +28,7 @@ export function Input({
           styles.inputBase,
           hasValue && styles.inputFilled
         )}
-        {...rest}
+        {...props}
       />
     </label>
   );
