@@ -1,0 +1,30 @@
+.counterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.description-blue {
+  color: var(--blue);
+}
+
+.description-purple {
+  color: var(--purple);
+}
+
+.number {
+  display: flex;
+  background-color: var(--gray-400);
+  border-radius: 12px;
+  color: var(--gray-200);
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  gap: 3px;
+  padding: 0.25rem 0.688rem;
+}
