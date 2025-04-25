@@ -1,0 +1,31 @@
+.emptyBoard {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.icon {
+  width: 3.5rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.description {
+  font-weight: 700;
+}
+
+.subdescription {
+  font-weight: 500;
+}
+
+.description,
+.subdescription {
+  color: var(--gray-300);
+  font-size: 1rem;
+}
