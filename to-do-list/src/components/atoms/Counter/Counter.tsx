@@ -8,6 +8,8 @@ export function Counter({
   total,
   selected
 }: CounterProps) {
+  const showSelected = selected !== undefined && total > 0;
+
   return (
     <div className={styles.counterContainer}>
       <span
@@ -19,7 +21,7 @@ export function Counter({
         {description}
       </span>
       <div className={styles.number}>
-        {typeof selected === 'number' && <span>{selected} de</span>}
+        {showSelected && <span>{selected} de</span>}
         <span>{total}</span>
       </div>
     </div>
