@@ -11,7 +11,7 @@
 }
 
 .customCheckbox {
-  background-color: var(--gray-700);
+  background-color: transparent;
   border: 2px solid var(--blue);
   border-radius: 100%;
   display: inline-block;
@@ -35,7 +35,7 @@
 }
 
 .checkboxContainer input:checked + .customCheckbox::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0.313rem;
   top: 0.103rem;
