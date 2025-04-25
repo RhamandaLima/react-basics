@@ -1,7 +1,11 @@
+import { Header } from './components/atoms/Header/Header';
+import { ToDoList } from './components/pages/ToDoList/ToDoList';
+
 export function App() {
   return (
     <>
-      <div>Bem-vindo ao TODO List</div>
+      <Header />
+      <ToDoList />
     </>
   );
 }

@@ -1,4 +1,5 @@
 .todo {
   display: flex;
   flex-direction: column;
+  width: 51%;
 }
